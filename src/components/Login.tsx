@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 import { gapi } from 'gapi-script';
 import LoginGoogle from './LoginGoogle';
 import LogoutGoogle from './LogoutGoogle';
+import { GoogleOAuthProvider } from '@react-oauth/google';
 
 
 const clientID = '712957607994-ji3ddn5pgmuh29uom17d39fvftft5bld.apps.googleusercontent.com';
@@ -17,15 +18,7 @@ type Props = {
 
 const Login = (props: Props) => {
 
-    useEffect(() => {
-        const start = () => {
-            gapi.client.init({
-                clientId : clientID,
-                scope : ''
-            });
-        };
-        gapi.load('client:auth2', start);
-    },[]);
+
 
 
 
@@ -79,8 +72,11 @@ const Login = (props: Props) => {
                         sign Up
                     </Link>
                 </Typography>
+                <GoogleOAuthProvider clientId={clientID}>
+
                 <LoginGoogle/>
                 <LogoutGoogle/>
+                </GoogleOAuthProvider>
             </Paper>
         </Grid>
     );

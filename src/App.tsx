@@ -8,10 +8,13 @@ import SignUp from './components/SignUp';
 import SignINandUP from './containers/SignINandUP';
 import { theme, fonts } from './utils/theme';
 
+
+
 import './App.css'
 
 function Copyright() {
   return (
+    
     <Typography variant="body2" color="text.secondary" align="center">
       {'Copyright © '}
       <Link color="inherit" href="https://mui.com/">
@@ -19,6 +22,7 @@ function Copyright() {
       </Link>{' '}
       {new Date().getFullYear()}.
     </Typography>
+  
   );
 }
 
